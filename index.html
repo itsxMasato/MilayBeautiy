@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MILAY BEAUTY</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #faf7f4;
+    --rose: #c9a09a;
+    --rose-light: #e8d0cc;
+    --deep: #3d2b2e;
+    --charcoal: #1e1a1b;
+    --primary: #70585b;
+    --container: #fadadd;
+    --surface: #f9f9f9;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--cream);
+    color: var(--charcoal);
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.2rem 4rem;
+    background: rgba(250,247,244,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--rose-light);
+  }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 300;
+    letter-spacing: 0.25em;
+    color: var(--deep);
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 0.78rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--primary);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .nav-links a:hover { color: var(--deep); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 8rem 2rem 4rem;
+    position: relative;
+    background: var(--cream);
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -10%;
+    right: -15%;
+    width: 55vw;
+    height: 55vw;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--container) 0%, transparent 70%);
+    opacity: 0.5;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -5%;
+    left: -10%;
+    width: 40vw;
+    height: 40vw;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--rose-light) 0%, transparent 70%);
+    opacity: 0.4;
+  }
+
+  .hero-content { position: relative; z-index: 1; max-width: 700px; }
+
+  .hero-tag {
+    display: inline-block;
+    font-size: 0.72rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--rose);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(4rem, 10vw, 7rem);
+    font-weight: 300;
+    line-height: 0.95;
+    color: var(--deep);
+    letter-spacing: 0.05em;
+    margin-bottom: 1.8rem;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--rose);
+  }
+
+  .hero-lema {
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--primary);
+    line-height: 1.8;
+    letter-spacing: 0.05em;
+    margin-bottom: 2.5rem;
+    max-width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.85rem 2rem;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s;
+  }
+
+  .btn-primary {
+    background: var(--deep);
+    color: var(--cream);
+  }
+
+  .btn-primary:hover {
+    background: var(--charcoal);
+    transform: translateY(-2px);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--deep);
+    border: 1px solid var(--rose);
+  }
+
+  .btn-outline:hover {
+    background: var(--container);
+    transform: translateY(-2px);
+  }
+
+  /* SOCIAL */
+  .social-strip {
+    background: var(--deep);
+    padding: 1.2rem 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+  }
+
+  .social-link {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: var(--cream);
+    text-decoration: none;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+  }
+
+  .social-link:hover { opacity: 1; }
+
+  .social-link svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+  }
+
+  /* SECTIONS */
+  section {
+    padding: 6rem 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--rose);
+    margin-bottom: 0.75rem;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    font-weight: 300;
+    color: var(--deep);
+    line-height: 1.15;
+    margin-bottom: 3rem;
+  }
+
+  .section-title em { font-style: italic; color: var(--rose); }
+
+  /* SERVICES */
+  #servicios { padding-top: 7rem; }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .service-card {
+    background: var(--surface);
+    border: 1px solid var(--rose-light);
+    padding: 2rem 1.8rem;
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px;
+    height: 0;
+    background: var(--rose);
+    transition: height 0.4s;
+  }
+
+  .service-card:hover { transform: translateY(-4px); }
+  .service-card:hover::before { height: 100%; }
+
+  .service-icon {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .service-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--deep);
+    margin-bottom: 0.5rem;
+  }
+
+  .service-desc {
+    font-size: 0.85rem;
+    color: var(--primary);
+    line-height: 1.7;
+    margin-bottom: 1.2rem;
+  }
+
+  .service-price {
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    color: var(--rose);
+    font-weight: 400;
+  }
+
+  /* LOYALTY SECTION */
+  #fidelidad {
+    background: var(--deep);
+    max-width: 100%;
+    padding: 6rem 4rem;
+  }
+
+  #fidelidad .inner { max-width: 1200px; margin: 0 auto; }
+
+  #fidelidad .section-label { color: var(--rose); }
+  #fidelidad .section-title { color: var(--cream); }
+
+  .loyalty-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  /* CARD VISUAL */
+  .loyalty-card-visual {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--deep) 60%, var(--charcoal) 100%);
+    border: 1px solid rgba(201,160,154,0.3);
+    border-radius: 16px;
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 1.6/1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .loyalty-card-visual::before {
+    content: '';
+    position: absolute;
+    top: -30%;
+    right: -20%;
+    width: 60%;
+    height: 60%;
+    border-radius: 50%;
+    background: rgba(201,160,154,0.15);
+  }
+
+  .loyalty-card-visual::after {
+    content: '';
+    position: absolute;
+    bottom: -20%;
+    left: -10%;
+    width: 50%;
+    height: 50%;
+    border-radius: 50%;
+    background: rgba(250,218,221,0.08);
+  }
+
+  .card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .card-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    letter-spacing: 0.15em;
+    color: var(--cream);
+    font-weight: 300;
+  }
+
+  .card-badge {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--rose);
+    border: 1px solid var(--rose);
+    padding: 0.3rem 0.7rem;
+  }
+
+  .card-stamps {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    z-index: 1;
+    position: relative;
+  }
+
+  .stamp {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(201,160,154,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    transition: all 0.3s;
+  }
+
+  .stamp.filled {
+    background: var(--rose);
+    border-color: var(--rose);
+  }
+
+  .card-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    z-index: 1;
+    position: relative;
+  }
+
+  .card-name {
+    font-size: 0.85rem;
+    color: var(--cream);
+    letter-spacing: 0.1em;
+    opacity: 0.9;
+  }
+
+  .card-number {
+    font-size: 0.7rem;
+    color: rgba(250,247,244,0.5);
+    letter-spacing: 0.15em;
+  }
+
+  /* REGISTER FORM */
+  .register-panel h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: var(--cream);
+    margin-bottom: 0.5rem;
+  }
+
+  .register-panel p {
+    font-size: 0.85rem;
+    color: rgba(250,247,244,0.6);
+    margin-bottom: 2rem;
+    line-height: 1.7;
+  }
+
+  .form-group {
+    margin-bottom: 1.2rem;
+  }
+
+  .form-group label {
+    display: block;
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--rose);
+    margin-bottom: 0.5rem;
+  }
+
+  .form-group input {
+    width: 100%;
+    background: rgba(250,247,244,0.06);
+    border: 1px solid rgba(201,160,154,0.3);
+    color: var(--cream);
+    padding: 0.8rem 1rem;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 300;
+    outline: none;
+    transition: border-color 0.3s;
+  }
+
+  .form-group input::placeholder { color: rgba(250,247,244,0.3); }
+
+  .form-group input:focus { border-color: var(--rose); }
+
+  .btn-register {
+    width: 100%;
+    background: var(--rose);
+    color: var(--deep);
+    border: none;
+    padding: 1rem;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    transition: all 0.3s;
+  }
+
+  .btn-register:hover { background: var(--cream); }
+
+  /* SUCCESS / LOOKUP */
+  .success-msg {
+    display: none;
+    background: rgba(201,160,154,0.15);
+    border: 1px solid var(--rose);
+    padding: 1.5rem;
+    margin-top: 1rem;
+  }
+
+  .success-msg p {
+    color: var(--cream);
+    margin: 0;
+    font-size: 0.9rem;
+  }
+
+  /* CLIENT LOOKUP */
+  .lookup-section {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(201,160,154,0.2);
+  }
+
+  .lookup-section h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    color: var(--cream);
+    margin-bottom: 0.5rem;
+  }
+
+  .lookup-section p {
+    font-size: 0.82rem;
+    color: rgba(250,247,244,0.5);
+    margin-bottom: 1rem;
+  }
+
+  .lookup-row {
+    display: flex;
+    gap: 0.8rem;
+  }
+
+  .lookup-row input {
+    flex: 1;
+    background: rgba(250,247,244,0.06);
+    border: 1px solid rgba(201,160,154,0.3);
+    color: var(--cream);
+    padding: 0.7rem 1rem;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.9rem;
+    outline: none;
+  }
+
+  .lookup-row input:focus { border-color: var(--rose); }
+
+  .btn-lookup {
+    background: transparent;
+    border: 1px solid var(--rose);
+    color: var(--rose);
+    padding: 0.7rem 1.2rem;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .btn-lookup:hover { background: var(--rose); color: var(--deep); }
+
+  .lookup-result {
+    display: none;
+    margin-top: 1rem;
+    padding: 1.2rem;
+    background: rgba(250,247,244,0.05);
+    border: 1px solid rgba(201,160,154,0.2);
+  }
+
+  .lookup-result .client-info {
+    font-size: 0.85rem;
+    color: var(--cream);
+    margin-bottom: 0.8rem;
+  }
+
+  .lookup-result .stamp-row {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .mini-stamp {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(201,160,154,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+  }
+
+  .mini-stamp.filled {
+    background: var(--rose);
+    border-color: var(--rose);
+  }
+
+  /* ABOUT */
+  #nosotras {
+    background: var(--container);
+    max-width: 100%;
+    padding: 6rem 4rem;
+  }
+
+  #nosotras .inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .about-deco {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .about-circle {
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    background: var(--rose-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .about-circle::before {
+    content: '';
+    position: absolute;
+    inset: -12px;
+    border-radius: 50%;
+    border: 1px solid var(--rose);
+    opacity: 0.4;
+  }
+
+  .about-circle-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 5rem;
+    color: var(--deep);
+    opacity: 0.3;
+    font-weight: 300;
+    font-style: italic;
+  }
+
+  .about-text .section-label { color: var(--primary); }
+  .about-text .section-title { color: var(--deep); }
+
+  .about-text p {
+    font-size: 0.95rem;
+    color: var(--primary);
+    line-height: 1.9;
+    margin-bottom: 1.5rem;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--charcoal);
+    padding: 3rem 4rem;
+    text-align: center;
+  }
+
+  footer .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    color: var(--cream);
+    opacity: 0.8;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  footer p {
+    font-size: 0.75rem;
+    color: rgba(250,247,244,0.3);
+    letter-spacing: 0.1em;
+  }
+
+  /* DIVIDER */
+  .ornament {
+    text-align: center;
+    padding: 2rem 0;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    color: var(--rose);
+    opacity: 0.5;
+    letter-spacing: 0.5em;
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-content > * {
+    animation: fadeUp 0.9s ease forwards;
+    opacity: 0;
+  }
+
+  .hero-content > *:nth-child(1) { animation-delay: 0.1s; }
+  .hero-content > *:nth-child(2) { animation-delay: 0.3s; }
+  .hero-content > *:nth-child(3) { animation-delay: 0.5s; }
+  .hero-content > *:nth-child(4) { animation-delay: 0.7s; }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    section { padding: 4rem 1.5rem; }
+    #servicios { padding-top: 5rem; }
+    .loyalty-layout { grid-template-columns: 1fr; gap: 2rem; }
+    #nosotras .inner { grid-template-columns: 1fr; gap: 2rem; }
+    .about-deco { display: none; }
+    .social-strip { padding: 1rem 1.5rem; gap: 1.5rem; flex-wrap: wrap; }
+    #fidelidad { padding: 4rem 1.5rem; }
+    #nosotras { padding: 4rem 1.5rem; }
+    footer { padding: 2rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">MILAY BEAUTY</a>
+  <ul class="nav-links">
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#nosotras">Nosotras</a></li>
+    <li><a href="#fidelidad">Tarjeta Fidelidad</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="hero-content">
+    <span class="hero-tag">✦ Salón de Belleza ✦</span>
+    <h1>MILAY<br><em>BEAUTY</em></h1>
+    <p class="hero-lema">
+      Donde cada mujer descubre su versión más radiante.<br>
+      <em style="font-style:italic; color: var(--rose); font-family: 'Cormorant Garamond', serif;">"Tu belleza, nuestra pasión."</em>
+    </p>
+    <div class="hero-actions">
+      <a href="#servicios" class="btn btn-primary">Ver servicios</a>
+      <a href="#fidelidad" class="btn btn-outline">Mi tarjeta</a>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL STRIP -->
+<div class="social-strip">
+  <a href="https://www.instagram.com/" target="_blank" class="social-link">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+    @milaybeauty
+  </a>
+  <a href="https://wa.me/50412345678" target="_blank" class="social-link">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    WhatsApp
+  </a>
+</div>
+
+<!-- SERVICES -->
+<section id="servicios">
+  <span class="section-label">✦ Lo que hacemos</span>
+  <h2 class="section-title">Nuestros<br><em>servicios</em></h2>
+
+  <!-- CABELLO -->
+  <div style="margin-bottom: 0.5rem;">
+    <span style="font-size: 0.72rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--primary);">✂ Cabello</span>
+  </div>
+  <div class="services-grid" style="margin-bottom: 3rem;">
+    <div class="service-card">
+      <div class="service-icon">✂</div>
+      <h3 class="service-name">Corte</h3>
+      <p class="service-desc">Cortes personalizados que realzan tu belleza natural. Diseñamos el look perfecto para cada tipo de rostro.</p>
+      <span class="service-price">L 100 – L 150</span>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">💨</div>
+      <h3 class="service-name">Secado, Planchado u Ondas</h3>
+      <p class="service-desc">Estilizado profesional para cualquier ocasión. Liso brillante, ondas románticas o volumen natural.</p>
+      <span class="service-price">DESDE L 150</span>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🎨</div>
+      <h3 class="service-name">Baño de Color</h3>
+      <p class="service-desc">Transforma tu look con color vibrante y duradero. Tonos personalizados para cada clienta.</p>
+      <span class="service-price">DESDE L 600</span>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">✨</div>
+      <h3 class="service-name">Nanoplastia</h3>
+      <p class="service-desc">Tratamiento de alisado progresivo que nutre y sella la cutícula. Resultados de hasta 6 meses.</p>
+      <span class="service-price">L 750 / onza</span>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🌟</div>
+      <h3 class="service-name">Keratina</h3>
+      <p class="service-desc">Reconstrucción profunda que elimina el frizz y devuelve suavidad, brillo y manejabilidad al cabello.</p>
+      <span class="service-price">L 500 / onza</span>
+    </div>
+  </div>
+
+  <!-- UÑAS -->
+  <div style="margin-bottom: 0.5rem;">
+    <span style="font-size: 0.72rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--primary);">💅 Uñas</span>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">💅</div>
+      <h3 class="service-name">Semipermanente</h3>
+      <p class="service-desc">Esmalte de larga duración con acabado impecable. Incluye preparación y sellado profesional.</p>
+      <span class="service-price">L 300</span>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🗑</div>
+      <h3 class="service-name">Retiro</h3>
+      <p class="service-desc">Retiro seguro y sin dañar la uña natural. Semipermanente o acrílico con técnica profesional.</p>
+      <span class="service-price">L 50 semiperm · L 100 acrílico</span>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🖌</div>
+      <h3 class="service-name">Diseños</h3>
+      <p class="service-desc">Arte en tus uñas: desde detalles minimalistas hasta diseños elaborados. Expresa tu personalidad.</p>
+      <span class="service-price">L 50 – L 150</span>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🌸</div>
+      <h3 class="service-name">Baño de Polygel</h3>
+      <p class="service-desc">Sistema de gel-acrílico híbrido. Más liviano, flexible y de aspecto ultra natural.</p>
+      <span class="service-price">L 350</span>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">💎</div>
+      <h3 class="service-name">Aplicación Uñas Cortas</h3>
+      <p class="service-desc">Uñas completas de largo corto con acabado perfecto. Ideales para quienes prefieren lo práctico y elegante.</p>
+      <span class="service-price">L 500</span>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">✨</div>
+      <h3 class="service-name">Uñas Soft Gel</h3>
+      <p class="service-desc">Aplicación con gel suave y flexible de aspecto natural. Mayor durabilidad con comodidad total.</p>
+      <span class="service-price">L 600</span>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🌿</div>
+      <h3 class="service-name">Tratamientos de Uña</h3>
+      <p class="service-desc">Calcio o Vitamina E para fortalecer y nutrir la uña natural. Se pueden adicionar con el semipermanente.</p>
+      <span class="service-price">Calcio L 300 · Vit. E L 200 · Con semi L 100</span>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">💫</div>
+      <h3 class="service-name">Uña Individual</h3>
+      <p class="service-desc">Reposición o aplicación de una uña individual en caso de quiebre o accidente.</p>
+      <span class="service-price">L 50 c/u</span>
+    </div>
+  </div>
+</section>
+
+<div class="ornament">· · ✦ · ·</div>
+
+<!-- ABOUT -->
+<div id="nosotras">
+  <div class="inner">
+    <div class="about-deco">
+      <div class="about-circle">
+        <span class="about-circle-text">M</span>
+      </div>
+    </div>
+    <div class="about-text">
+      <span class="section-label">✦ Nuestra historia</span>
+      <h2 class="section-title">Más que un salón,<br><em>un refugio</em></h2>
+      <p>
+        MILAY BEAUTY nació del amor por la belleza auténtica. Creemos que cada mujer merece sentirse extraordinaria, no solo los días especiales, sino cada día.
+      </p>
+      <p>
+        Nuestro equipo de profesionales se actualiza constantemente con las últimas tendencias mundiales para ofrecerte siempre lo mejor. Cada servicio es una experiencia pensada para ti.
+      </p>
+      <p>
+        <em style="font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--deep);">"Tu belleza, nuestra pasión."</em>
+      </p>
+      <a href="https://wa.me/50412345678" target="_blank" class="btn btn-primary" style="margin-top: 1.5rem; display: inline-flex;">
+        Reservar cita
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- LOYALTY -->
+<div id="fidelidad">
+  <div class="inner">
+    <span class="section-label">✦ Programa exclusivo</span>
+    <h2 class="section-title">Tarjeta de<br><em>Fidelidad</em></h2>
+
+    <div class="loyalty-layout">
+      <!-- CARD VISUAL -->
+      <div>
+        <div class="loyalty-card-visual" id="previewCard">
+          <div class="card-top">
+            <span class="card-brand">MILAY BEAUTY</span>
+            <span class="card-badge">FIDELIDAD</span>
+          </div>
+          <div class="card-stamps" id="previewStamps">
+            <!-- stamps rendered by JS -->
+          </div>
+          <div class="card-bottom">
+            <span class="card-name" id="previewName">Tu nombre aquí</span>
+            <span class="card-number" id="previewNumber">#MB-0000</span>
+          </div>
+        </div>
+        <p style="font-size: 0.78rem; color: rgba(250,247,244,0.4); margin-top: 1rem; letter-spacing: 0.08em; line-height: 1.7;">
+          Acumula 10 sellos y obtén un servicio gratis. Cada visita cuenta. ✦
+        </p>
+
+        <!-- LOOKUP -->
+        <div class="lookup-section">
+          <h4>¿Ya eres clienta?</h4>
+          <p>Consulta tu tarjeta con tu número</p>
+          <div class="lookup-row">
+            <input type="text" id="lookupInput" placeholder="Ej: MB-1234" maxlength="10">
+            <button class="btn-lookup" onclick="lookupCard()">Consultar</button>
+          </div>
+          <div class="lookup-result" id="lookupResult"></div>
+        </div>
+      </div>
+
+      <!-- REGISTER FORM -->
+      <div class="register-panel">
+        <h3>Regístrate gratis</h3>
+        <p>Únete al programa de fidelidad y comienza a acumular beneficios desde tu primera visita.</p>
+
+        <div class="form-group">
+          <label>Nombre completo</label>
+          <input type="text" id="regNombre" placeholder="María García" oninput="updatePreview()">
+        </div>
+        <div class="form-group">
+          <label>Teléfono / WhatsApp</label>
+          <input type="tel" id="regTel" placeholder="+504 9999-9999">
+        </div>
+        <div class="form-group">
+          <label>Correo electrónico</label>
+          <input type="email" id="regEmail" placeholder="maria@correo.com">
+        </div>
+        <div class="form-group">
+          <label>Cumpleaños (para regalo especial 🎂)</label>
+          <input type="date" id="regBday">
+        </div>
+
+        <button class="btn-register" onclick="registerClient()">✦ Obtener mi tarjeta</button>
+
+        <div class="success-msg" id="successMsg">
+          <p id="successText"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-logo">MILAY BEAUTY</span>
+  <p>"Tu belleza, nuestra pasión."</p>
+  <p style="margin-top: 0.5rem;">© 2025 Milay Beauty · Todos los derechos reservados</p>
+</footer>
+
+<script>
+  // Storage key
+  const STORE_KEY = 'milay_clients';
+
+  function getClients() {
+    try {
+      return JSON.parse(localStorage.getItem(STORE_KEY) || '{}');
+    } catch { return {}; }
+  }
+
+  function saveClients(clients) {
+    localStorage.setItem(STORE_KEY, JSON.stringify(clients));
+  }
+
+  function generateCode() {
+    return 'MB-' + Math.floor(1000 + Math.random() * 9000);
+  }
+
+  // Render stamps preview
+  function renderStamps(containerId, filled, total) {
+    total = total || 10;
+    const el = document.getElementById(containerId);
+    if (!el) return;
+    el.innerHTML = '';
+    for (let i = 0; i < total; i++) {
+      const s = document.createElement('div');
+      s.className = 'stamp' + (i < filled ? ' filled' : '');
+      s.textContent = i < filled ? '✦' : '';
+      el.appendChild(s);
+    }
+  }
+
+  function renderMiniStamps(containerId, filled, total) {
+    total = total || 10;
+    const el = document.getElementById(containerId);
+    if (!el) return;
+    el.innerHTML = '';
+    for (let i = 0; i < total; i++) {
+      const s = document.createElement('div');
+      s.className = 'mini-stamp' + (i < filled ? ' filled' : '');
+      s.textContent = i < filled ? '✦' : '';
+      el.appendChild(s);
+    }
+  }
+
+  // Init preview
+  renderStamps('previewStamps', 3);
+
+  function updatePreview() {
+    const name = document.getElementById('regNombre').value.trim();
+    document.getElementById('previewName').textContent = name || 'Tu nombre aquí';
+  }
+
+  function registerClient() {
+    const nombre = document.getElementById('regNombre').value.trim();
+    const tel = document.getElementById('regTel').value.trim();
+    const email = document.getElementById('regEmail').value.trim();
+    const bday = document.getElementById('regBday').value;
+
+    if (!nombre || !tel) {
+      alert('Por favor ingresa tu nombre y teléfono.');
+      return;
+    }
+
+    const clients = getClients();
+
+    // Check duplicate by phone
+    const existing = Object.values(clients).find(c => c.tel === tel);
+    if (existing) {
+      document.getElementById('successMsg').style.display = 'block';
+      document.getElementById('successText').textContent =
+        '¡Ya estás registrada! Tu número es ' + existing.code + '. Tienes ' + existing.sellos + ' sello(s) acumulado(s).';
+      return;
+    }
+
+    const code = generateCode();
+    const client = { nombre, tel, email, bday, code, sellos: 0, fecha: new Date().toLocaleDateString('es-HN') };
+    clients[code] = client;
+    saveClients(clients);
+
+    // Update card preview
+    document.getElementById('previewName').textContent = nombre;
+    document.getElementById('previewNumber').textContent = '#' + code;
+    renderStamps('previewStamps', 0);
+
+    document.getElementById('successMsg').style.display = 'block';
+    document.getElementById('successText').textContent =
+      '¡Bienvenida, ' + nombre + '! 🌸 Tu código es ' + code + '. Preséntalo en cada visita para acumular sellos.';
+
+    // Clear form
+    ['regNombre','regTel','regEmail','regBday'].forEach(id => document.getElementById(id).value = '');
+  }
+
+  function lookupCard() {
+    const val = document.getElementById('lookupInput').value.trim().toUpperCase();
+    const resultEl = document.getElementById('lookupResult');
+
+    if (!val) { resultEl.style.display = 'none'; return; }
+
+    const clients = getClients();
+    const code = val.startsWith('MB-') ? val : 'MB-' + val.replace('MB','');
+    const client = clients[code] || clients[val];
+
+    if (!client) {
+      resultEl.style.display = 'block';
+      resultEl.innerHTML = '<p style="color: rgba(250,247,244,0.6); font-size: 0.85rem;">No encontramos ese número. Verifica e intenta de nuevo.</p>';
+      return;
+    }
+
+    const reward = client.sellos >= 10 ? '<br><span style="color: var(--rose); font-size: 0.85rem;">🎉 ¡Tienes un servicio gratis disponible! Muestra esta pantalla.</span>' : '';
+
+    resultEl.style.display = 'block';
+    resultEl.innerHTML = `
+      <div class="client-info">
+        <strong style="color: var(--cream);">${client.nombre}</strong><br>
+        <span style="color: rgba(250,247,244,0.5); font-size: 0.78rem;">${client.code} · Desde ${client.fecha}</span><br>
+        <span style="color: var(--rose); font-size: 0.85rem; margin-top: 4px; display:inline-block;">Sellos: ${client.sellos} / 10</span>${reward}
+      </div>
+      <div class="stamp-row" id="lookupStamps"></div>
+    `;
+    renderMiniStamps('lookupStamps', client.sellos);
+  }
+
+  // Smooth nav
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+    });
+  });
+</script>
+</body>
+</html>
